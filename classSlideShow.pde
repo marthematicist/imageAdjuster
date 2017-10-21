@@ -112,6 +112,18 @@ class SlideShow {
         h1 = w1/ar1;
       }
     }
+    /*
+    float wr = w1/w;
+    float hr = h1/h;
+    if( wr < minR ) {
+      w1 = w1*minR/wr;
+      h1 = h1*minR/wr;
+    }
+    if( hr < minR ) {
+      w1 = w1*minR/hr;
+      h1 = h1*minR/hr;
+    }
+    */
     buffer.image(  currentImage , 0.5*w - 0.5*w1 , 0.5*h - 0.5*h1 , w1 , h1 );
     buffer.endDraw();
   }

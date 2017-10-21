@@ -1,4 +1,4 @@
-String imagePath = "E:\\media";
+String imagePath = "E:\\media\\forMom";
 int xRes = 1920;
 int yRes = 1080;
 File[] imageFiles;
@@ -102,23 +102,18 @@ void resizeImage( File f , int w , int h ) {
   int minDim1 = min( w1 , h1 );
   float ar1 = float(raw.width)/float(raw.height);
   if( minDim1 > maxDim0 ) {
-    if( w0 > h0 ) {
-      if( w1 > h1 ) {
-        raw.resize( ceil(w0) , ceil(w0/ar1) );
-        
-      } else {
-        // h1 > w1
-        raw.resize( ceil(w0/ar1) , ceil(w0) );
-      }
+    
+    if( w1 > h1 ) {
+      raw.resize( ceil(w0) , ceil(w0/ar1) );
+      println( w0 , h0 );
+      
     } else {
-      // h0 > w0
-      if( w1 > h1 ) {
-        raw.resize( ceil(h0) , ceil(h0*ar1) );
-      }  else {
-        // h1 > w0
-        raw.resize( ceil(h0*ar1) , ceil(h0) );
-      }
+      // h1 > w1
+      raw.resize( ceil(w0*ar1) , ceil(w0) );
+      println( w1 , h1 );
+      println( ceil(w0*ar1) , ceil(w0) );
     }
+    
     raw.save( imagePath );
     println("saving image");
   }
