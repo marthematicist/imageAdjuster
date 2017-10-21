@@ -1,6 +1,6 @@
-String imagePath = "E:\\media\\forMom";
-int xRes = 1920;
-int yRes = 1080;
+String imagePath = "Z:\\";
+int xRes = 1280;
+int yRes = 720;
 File[] imageFiles;
 SlideShow Photos;
 int num;
